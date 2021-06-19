@@ -172,6 +172,8 @@ section.banner-w3ls button.btn.btn-default {
 .pogoSlider-slide-element {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+    width: 50%;
+    height: 600px;
     text-align:center;
     margin-top: 410px!important;
 }
