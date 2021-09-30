@@ -1,0 +1,1384 @@
+robin@robin-VirtualBox:~$ cd Pictures
+robin@robin-VirtualBox:~/Pictures$ insertline.sh
+insertline.sh: command not found
+robin@robin-VirtualBox:~/Pictures$ bash insert.sh
+bash: insert.sh: No such file or directory
+robin@robin-VirtualBox:~/Pictures$ bash insertline.sh
+robin@robin-VirtualBox:~/Pictures$ sed -n '4~3p' test.txt
+3333333
+3
+3333333
+
+3
+
+3
+3
+robin@robin-VirtualBox:~/Pictures$ sed -n '4~3p' test.txt
+4
+7
+10
+13
+
+robin@robin-VirtualBox:~/Pictures$ sed -n '10~10' test.txt
+sed: -e expression #1, char 5: missing command
+robin@robin-VirtualBox:~/Pictures$ sed -n '10~10p' test.txt
+10
+43
+3
+robin@robin-VirtualBox:~/Pictures$ cat test.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+12
+34
+43
+23
+43
+232
+12
+121
+32
+323
+23
+231
+212
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ sed 's/1/1/' test.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+12
+34
+431
+1
+1
+23
+43
+232
+12
+1211
+1
+32
+323
+23
+231
+212
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ sed 's/1/replaced/' test.txt
+replaced
+2
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replaced1
+replaced2
+replaced3
+replaced4
+replaced5
+replaced2
+34
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ sed 's/1/replaced/' test.txtclear
+sed: can't read test.txtclear: No such file or directory
+robin@robin-VirtualBox:~/Pictures$ sed 's/1/replaced/' test.txtclear
+sed: can't read test.txtclear: No such file or directory
+robin@robin-VirtualBox:~/Pictures$ sed 's/1/replaced/' test.txt
+replaced
+2
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replaced1
+replaced2
+replaced3
+replaced4
+replaced5
+replaced2
+34
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ sed -'s/1/replaced/' test.txt
+sed: invalid option -- '/'
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+      --debug
+                 annotate program execution
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -E, -r, --regexp-extended
+                 use extended regular expressions in the script
+                 (for portability use POSIX -E).
+  -s, --separate
+                 consider files as separate rather than as a single,
+                 continuous long stream.
+      --sandbox
+                 operate in sandbox mode (disable e/r/w commands).
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then the first
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input files are
+specified, then the standard input is read.
+
+GNU sed home page: <https://www.gnu.org/software/sed/>.
+General help using GNU software: <https://www.gnu.org/gethelp/>.
+robin@robin-VirtualBox:~/Pictures$ sed -i's/1/replaced/' test.txt
+sed: can't find label for jump to `est.txt'
+robin@robin-VirtualBox:~/Pictures$ sed -i 's/1/replaced/' test.txt
+robin@robin-VirtualBox:~/Pictures$ sed --help
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+      --debug
+                 annotate program execution
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -E, -r, --regexp-extended
+                 use extended regular expressions in the script
+                 (for portability use POSIX -E).
+  -s, --separate
+                 consider files as separate rather than as a single,
+                 continuous long stream.
+      --sandbox
+                 operate in sandbox mode (disable e/r/w commands).
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then the first
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input files are
+specified, then the standard input is read.
+
+GNU sed home page: <https://www.gnu.org/software/sed/>.
+General help using GNU software: <https://www.gnu.org/gethelp/>.
+E-mail bug reports to: <bug-sed@gnu.org>.
+robin@robin-VirtualBox:~/Pictures$ sed -n '10~10p' test.txt
+replaced0
+replaced
+23replaced
+robin@robin-VirtualBox:~/Pictures$ sed -i 's/10~10/replaced/' test.txt
+robin@robin-VirtualBox:~/Pictures$ sed -i 's/10~10/ppppppppp/' test.txt
+robin@robin-VirtualBox:~/Pictures$ sed -i 's/10~10p/ppppppppp/' test.txt
+robin@robin-VirtualBox:~/Pictures$ sed -n '10~10p' test.txt^C
+robin@robin-VirtualBox:~/Pictures$ sed 's/1/replaced/' test.txt
+replaced
+2
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replacedreplaced
+replaced2
+replaced3
+replaced4
+replaced5
+replaced2
+34
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced2replaced1
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ sed -i 's/10~10p/ppppppppp/g' test.txt
+robin@robin-VirtualBox:~/Pictures$ cat text.txt | tr a-z A-Z>new.txt
+cat: text.txt: No such file or directory
+robin@robin-VirtualBox:~/Pictures$ cat test.txt | tr a-z A-Z>new.txt
+robin@robin-VirtualBox:~/Pictures$ cat test.txt | tr A-Z a-z>out.txt
+robin@robin-VirtualBox:~/Pictures$ ^C
+robin@robin-VirtualBox:~/Pictures$ bash shell.sh
+robin@robin-VirtualBox:~/Pictures$ cp -i test.txt /home/robin/Music
+robin@robin-VirtualBox:~/Pictures$ cp -i test.txt /home/robin/Music
+cp: overwrite '/home/robin/Music/test.txt'?  
+robin@robin-VirtualBox:~/Pictures$ cd /home/robin/Music
+robin@robin-VirtualBox:~/Music$ ls
+files  file.txt  test  tests  test.tar  test.txt
+robin@robin-VirtualBox:~/Music$ ls -a
+.  ..  files  file.txt  test  tests  test.tar  test.txt
+robin@robin-VirtualBox:~/Music$ ls -all
+total 40
+drwxr-xr-x  4 robin robin  4096 Sep 30 20:29 .
+drwxr-xr-x 20 robin robin  4096 Sep 30 18:26 ..
+----------  1 robin robin    55 Sep 11 14:23 files
+-rwxr-xr-x  1 robin robin    21 Sep  8 16:46 file.txt
+drwxrwxr-x  2 robin robin  4096 Sep  8 17:19 test
+drwxrwxr-x  2 robin robin  4096 Sep 29 16:40 tests
+-rw-rw-r--  1 robin robin 10240 Sep  8 17:16 test.tar
+-rw-rw-r--  1 robin robin   223 Sep 30 20:29 test.txt
+robin@robin-VirtualBox:~/Music$ ls -al
+total 40
+drwxr-xr-x  4 robin robin  4096 Sep 30 20:29 .
+drwxr-xr-x 20 robin robin  4096 Sep 30 18:26 ..
+----------  1 robin robin    55 Sep 11 14:23 files
+-rwxr-xr-x  1 robin robin    21 Sep  8 16:46 file.txt
+drwxrwxr-x  2 robin robin  4096 Sep  8 17:19 test
+drwxrwxr-x  2 robin robin  4096 Sep 29 16:40 tests
+-rw-rw-r--  1 robin robin 10240 Sep  8 17:16 test.tar
+-rw-rw-r--  1 robin robin   223 Sep 30 20:29 test.txt
+robin@robin-VirtualBox:~/Music$ cd /home/robin/Pictures
+robin@robin-VirtualBox:~/Pictures$ ls -al
+total 108
+drwxr-xr-x  4 robin robin  4096 Sep 30 20:26  .
+drwxr-xr-x 20 robin robin  4096 Sep 30 18:26  ..
+-rw-rw-r--  1 robin robin   109 Sep 29 10:48  1.sh
+-rw-rw-r--  1 robin robin    16 Sep 29 11:39  2.sh
+-rw-rw-r--  1 robin robin    70 Sep 29 11:44  3.sh
+-rw-rw-r--  1 robin robin    46 Sep 29 12:02  4.sh
+-rw-rw-r--  1 robin robin    99 Sep 29 16:38  array.sh
+-rw-rw-r--  1 robin robin    95 Sep 30 06:46  fibno.sh
+-rw-rw-r--  1 robin robin   220 Sep 29 16:14  file.sh
+drwxrwxr-x  7 robin robin  4096 Sep 30 06:49  .git
+-rw-rw-r--  1 robin robin   207 Sep 29 16:26  greater.sh
+-rw-rw-r--  1 robin robin    37 Sep 30 18:40  insertline.sh
+-rw-rw-r--  1 robin robin    41 Sep 29 16:39  latest.sh
+-rw-rw-r--  1 robin robin    24 Sep 30 18:40  newfile.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:22  new.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:26  out111.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:23  out.txt
+drwxrwxr-x 10 robin robin  4096 Sep 30 07:28  Python
+-rw-rw-r--  1 robin robin   164 Sep 29 17:26  reverse.sh
+-rw-rw-r--  1 robin robin 14450 Sep  8 20:51 'Screenshot from 2021-09-08 20-51-08.png'
+-rw-rw-r--  1 robin robin    37 Sep 30 20:26  shell.sh
+-rw-rw-r--  1 robin robin   223 Sep 30 20:20  test.txt
+-rw-rw-r--  1 robin robin   570 Sep 30 06:48  validation
+-rw-rw-r--  1 robin robin   570 Sep 30 06:49  validation.sh
+robin@robin-VirtualBox:~/Pictures$ ls
+ 1.sh       greater.sh      Python
+ 2.sh       insertline.sh   reverse.sh
+ 3.sh       latest.sh      'Screenshot from 2021-09-08 20-51-08.png'
+ 4.sh       newfile.txt     shell.sh
+ array.sh   new.txt         test.txt
+ fibno.sh   out111.txt      validation
+ file.sh    out.txt         validation.sh
+robin@robin-VirtualBox:~/Pictures$ ls -al
+total 108
+drwxr-xr-x  4 robin robin  4096 Sep 30 20:26  .
+drwxr-xr-x 20 robin robin  4096 Sep 30 18:26  ..
+-rw-rw-r--  1 robin robin   109 Sep 29 10:48  1.sh
+-rw-rw-r--  1 robin robin    16 Sep 29 11:39  2.sh
+-rw-rw-r--  1 robin robin    70 Sep 29 11:44  3.sh
+-rw-rw-r--  1 robin robin    46 Sep 29 12:02  4.sh
+-rw-rw-r--  1 robin robin    99 Sep 29 16:38  array.sh
+-rw-rw-r--  1 robin robin    95 Sep 30 06:46  fibno.sh
+-rw-rw-r--  1 robin robin   220 Sep 29 16:14  file.sh
+drwxrwxr-x  7 robin robin  4096 Sep 30 06:49  .git
+-rw-rw-r--  1 robin robin   207 Sep 29 16:26  greater.sh
+-rw-rw-r--  1 robin robin    37 Sep 30 18:40  insertline.sh
+-rw-rw-r--  1 robin robin    41 Sep 29 16:39  latest.sh
+-rw-rw-r--  1 robin robin    24 Sep 30 18:40  newfile.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:22  new.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:26  out111.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:23  out.txt
+drwxrwxr-x 10 robin robin  4096 Sep 30 07:28  Python
+-rw-rw-r--  1 robin robin   164 Sep 29 17:26  reverse.sh
+-rw-rw-r--  1 robin robin 14450 Sep  8 20:51 'Screenshot from 2021-09-08 20-51-08.png'
+-rw-rw-r--  1 robin robin    37 Sep 30 20:26  shell.sh
+-rw-rw-r--  1 robin robin   223 Sep 30 20:20  test.txt
+-rw-rw-r--  1 robin robin   570 Sep 30 06:48  validation
+-rw-rw-r--  1 robin robin   570 Sep 30 06:49  validation.sh
+robin@robin-VirtualBox:~/Pictures$ ls -t
+ out111.txt      Python          greater.sh
+ shell.sh        validation.sh   file.sh
+ out.txt         validation      4.sh
+ new.txt         fibno.sh        3.sh
+ test.txt        reverse.sh      2.sh
+ newfile.txt     latest.sh       1.sh
+ insertline.sh   array.sh       'Screenshot from 2021-09-08 20-51-08.png'
+robin@robin-VirtualBox:~/Pictures$ cp -p fibno.sh
+cp: missing destination file operand after 'fibno.sh'
+Try 'cp --help' for more information.
+robin@robin-VirtualBox:~/Pictures$ cp -p fibno.sh /home/robin/Music
+robin@robin-VirtualBox:~/Pictures$ ls -al
+total 108
+drwxr-xr-x  4 robin robin  4096 Sep 30 20:26  .
+drwxr-xr-x 20 robin robin  4096 Sep 30 18:26  ..
+-rw-rw-r--  1 robin robin   109 Sep 29 10:48  1.sh
+-rw-rw-r--  1 robin robin    16 Sep 29 11:39  2.sh
+-rw-rw-r--  1 robin robin    70 Sep 29 11:44  3.sh
+-rw-rw-r--  1 robin robin    46 Sep 29 12:02  4.sh
+-rw-rw-r--  1 robin robin    99 Sep 29 16:38  array.sh
+-rw-rw-r--  1 robin robin    95 Sep 30 06:46  fibno.sh
+-rw-rw-r--  1 robin robin   220 Sep 29 16:14  file.sh
+drwxrwxr-x  7 robin robin  4096 Sep 30 06:49  .git
+-rw-rw-r--  1 robin robin   207 Sep 29 16:26  greater.sh
+-rw-rw-r--  1 robin robin    37 Sep 30 18:40  insertline.sh
+-rw-rw-r--  1 robin robin    41 Sep 29 16:39  latest.sh
+-rw-rw-r--  1 robin robin    24 Sep 30 18:40  newfile.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:22  new.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:26  out111.txt
+-rw-rw-r--  1 robin robin   223 Sep 30 20:23  out.txt
+drwxrwxr-x 10 robin robin  4096 Sep 30 07:28  Python
+-rw-rw-r--  1 robin robin   164 Sep 29 17:26  reverse.sh
+-rw-rw-r--  1 robin robin 14450 Sep  8 20:51 'Screenshot from 2021-09-08 20-51-08.png'
+-rw-rw-r--  1 robin robin    37 Sep 30 20:26  shell.sh
+-rw-rw-r--  1 robin robin   223 Sep 30 20:20  test.txt
+-rw-rw-r--  1 robin robin   570 Sep 30 06:48  validation
+-rw-rw-r--  1 robin robin   570 Sep 30 06:49  validation.sh
+robin@robin-VirtualBox:~/Pictures$ cd ..
+robin@robin-VirtualBox:~$ cd Music
+robin@robin-VirtualBox:~/Music$ ls -al
+total 44
+drwxr-xr-x  4 robin robin  4096 Sep 30 20:36 .
+drwxr-xr-x 20 robin robin  4096 Sep 30 18:26 ..
+-rw-rw-r--  1 robin robin    95 Sep 30 06:46 fibno.sh
+----------  1 robin robin    55 Sep 11 14:23 files
+-rwxr-xr-x  1 robin robin    21 Sep  8 16:46 file.txt
+drwxrwxr-x  2 robin robin  4096 Sep  8 17:19 test
+drwxrwxr-x  2 robin robin  4096 Sep 29 16:40 tests
+-rw-rw-r--  1 robin robin 10240 Sep  8 17:16 test.tar
+-rw-rw-r--  1 robin robin   223 Sep 30 20:29 test.txt
+robin@robin-VirtualBox:~/Music$ cp -r /home/robin/Pictures
+cp: missing destination file operand after '/home/robin/Pictures'
+Try 'cp --help' for more information.
+robin@robin-VirtualBox:~/Music$ cp -r /home/robin/Pictures /home/robin/Documents
+robin@robin-VirtualBox:~/Music$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (this option
+                                 is ignored when the -n option is also used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then set the
+                                 SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+Use --reflink=never to ensure a standard copy is performed.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+robin@robin-VirtualBox:~/Music$ cd ..
+robin@robin-VirtualBox:~$ cd Documents
+robin@robin-VirtualBox:~/Documents$ pwd
+/home/robin/Documents
+robin@robin-VirtualBox:~/Documents$ mkdir test
+robin@robin-VirtualBox:~/Documents$ rmdir test
+robin@robin-VirtualBox:~/Documents$ mkdir test
+robin@robin-VirtualBox:~/Documents$ cd test
+robin@robin-VirtualBox:~/Documents/test$ cat >file.txt
+dfdsfd
+^C
+robin@robin-VirtualBox:~/Documents/test$ cd ..
+robin@robin-VirtualBox:~/Documents$ rmdir test
+rmdir: failed to remove 'test': Directory not empty
+robin@robin-VirtualBox:~/Documents$ rm test
+rm: cannot remove 'test': Is a directory
+robin@robin-VirtualBox:~/Documents$ rm -r test
+robin@robin-VirtualBox:~/Documents$ rm --help
+Usage: rm [OPTION]... [FILE]...
+Remove (unlink) the FILE(s).
+
+  -f, --force           ignore nonexistent files and arguments, never prompt
+  -i                    prompt before every removal
+  -I                    prompt once before removing more than three files, or
+                          when removing recursively; less intrusive than -i,
+                          while still giving protection against most mistakes
+      --interactive[=WHEN]  prompt according to WHEN: never, once (-I), or
+                          always (-i); without WHEN, prompt always
+      --one-file-system  when removing a hierarchy recursively, skip any
+                          directory that is on a file system different from
+                          that of the corresponding command line argument
+      --no-preserve-root  do not treat '/' specially
+      --preserve-root[=all]  do not remove '/' (default);
+                              with 'all', reject any command line argument
+                              on a separate device from its parent
+  -r, -R, --recursive   remove directories and their contents recursively
+  -d, --dir             remove empty directories
+  -v, --verbose         explain what is being done
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, rm does not remove directories.  Use the --recursive (-r or -R)
+option to remove each listed directory, too, along with all of its contents.
+
+To remove a file whose name starts with a '-', for example '-foo',
+use one of these commands:
+  rm -- -foo
+
+  rm ./-foo
+
+Note that if you use rm to remove a file, it might be possible to recover
+some of its contents, given sufficient expertise and/or time.  For greater
+assurance that the contents are truly unrecoverable, consider using shred.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/rm>
+or available locally via: info '(coreutils) rm invocation'
+robin@robin-VirtualBox:~/Documents$ touch new.txt
+robin@robin-VirtualBox:~/Documents$ locate new.txt
+robin@robin-VirtualBox:~/Documents$ cd ..
+robin@robin-VirtualBox:~$ locate new.txt
+robin@robin-VirtualBox:~$ locate -i new.txt
+robin@robin-VirtualBox:~$ cd Document
+bash: cd: Document: No such file or directory
+robin@robin-VirtualBox:~$ cd Documents
+robin@robin-VirtualBox:~/Documents$ locate -i new.txt
+robin@robin-VirtualBox:~/Documents$ locate --help
+Usage: locate [OPTION]... [PATTERN]...
+Search for entries in a mlocate database.
+
+  -A, --all              only print entries that match all patterns
+  -b, --basename         match only the base name of path names
+  -c, --count            only print number of found entries
+  -d, --database DBPATH  use DBPATH instead of default database (which is
+                         /var/lib/mlocate/mlocate.db)
+  -e, --existing         only print entries for currently existing files
+  -L, --follow           follow trailing symbolic links when checking file
+                         existence (default)
+  -h, --help             print this help
+  -i, --ignore-case      ignore case distinctions when matching patterns
+  -p, --ignore-spaces    ignore punctuation and spaces when matching patterns
+  -t, --transliterate    ignore accents using iconv transliteration when
+                         matching patterns
+  -l, --limit, -n LIMIT  limit output (or counting) to LIMIT entries
+  -m, --mmap             ignored, for backward compatibility
+  -P, --nofollow, -H     don't follow trailing symbolic links when checking file
+                         existence
+  -0, --null             separate entries with NUL on output
+  -S, --statistics       don't search for entries, print statistics about each
+                         used database
+  -q, --quiet            report no error messages about reading databases
+  -r, --regexp REGEXP    search for basic regexp REGEXP instead of patterns
+      --regex            patterns are extended regexps
+  -s, --stdio            ignored, for backward compatibility
+  -V, --version          print version information
+  -w, --wholename        match whole path name (default)
+
+Report bugs to https://pagure.io/mlocate.
+robin@robin-VirtualBox:~/Documents$ locate --all new.txt
+robin@robin-VirtualBox:~/Documents$ locate -i new.txt
+robin@robin-VirtualBox:~/Documents$ locate 1.sh
+/etc/profile.d/vte-2.91.sh
+/home/robin/Pictures/1.sh
+/snap/gnome-3-34-1804/60/etc/profile.d/vte-2.91.sh
+/snap/gnome-3-34-1804/72/etc/profile.d/vte-2.91.sh
+/usr/share/doc/gdb/contrib/expect-read1.sh
+/usr/src/linux-headers-5.8.0-25/tools/testing/selftests/net/forwarding/router_vid_1.sh
+/usr/src/linux-headers-5.8.0-25/tools/testing/selftests/zram/zram01.sh
+/usr/src/linux-headers-5.8.0-63/tools/testing/selftests/net/forwarding/router_vid_1.sh
+/usr/src/linux-headers-5.8.0-63/tools/testing/selftests/zram/zram01.sh
+/var/lib/dpkg/info/libappindicator3-1.shlibs
+/var/lib/dpkg/info/libfreehand-0.1-1.shlibs
+/var/lib/dpkg/info/libgdm1.shlibs
+/var/lib/dpkg/info/libvolume-key1.shlibs
+robin@robin-VirtualBox:~/Documents$ locate out.txt
+robin@robin-VirtualBox:~/Documents$ find out.txt
+find: ‘out.txt’: No such file or directory
+robin@robin-VirtualBox:~/Documents$ find new.txt
+new.txt
+robin@robin-VirtualBox:~/Documents$ grep hari
+^C
+robin@robin-VirtualBox:~/Documents$ grep hari new.txt
+hari ku.....
+robin@robin-VirtualBox:~/Documents$ sudo apt install mlocate
+[sudo] password for robin: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+mlocate is already the newest version (0.26-3ubuntu3).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+robin@robin-VirtualBox:~/Documents$ locate new.txt
+robin@robin-VirtualBox:~/Documents$ grep hari new.txt
+hari ku.....
+robin@robin-VirtualBox:~/Documents$ grep aswin new.txt
+aswin ku......
+robin@robin-VirtualBox:~/Documents$ df
+df: /run/user/1000/doc: Operation not permitted
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs             203132     1396    201736   1% /run
+/dev/sda3       75901756 12779384  59223700  18% /
+tmpfs            1015660        0   1015660   0% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+tmpfs               4096        0      4096   0% /sys/fs/cgroup
+/dev/sda2         524272     8036    516236   2% /boot/efi
+tmpfs             203132      896    202236   1% /run/user/1000
+robin@robin-VirtualBox:~/Documents$ du
+4	./Pictures/.git/refs/heads
+4	./Pictures/.git/refs/tags
+12	./Pictures/.git/refs
+8	./Pictures/.git/info
+60	./Pictures/.git/hooks
+4	./Pictures/.git/branches
+4	./Pictures/.git/objects/info
+4	./Pictures/.git/objects/pack
+12	./Pictures/.git/objects
+112	./Pictures/.git
+8	./Pictures/Python/.git/logs/refs/heads
+8	./Pictures/Python/.git/logs/refs/remotes/origin
+12	./Pictures/Python/.git/logs/refs/remotes
+24	./Pictures/Python/.git/logs/refs
+32	./Pictures/Python/.git/logs
+8	./Pictures/Python/.git/refs/heads
+8	./Pictures/Python/.git/refs/remotes/origin
+12	./Pictures/Python/.git/refs/remotes
+4	./Pictures/Python/.git/refs/tags
+28	./Pictures/Python/.git/refs
+8	./Pictures/Python/.git/info
+60	./Pictures/Python/.git/hooks
+4	./Pictures/Python/.git/branches
+4	./Pictures/Python/.git/objects/info
+252	./Pictures/Python/.git/objects/pack
+260	./Pictures/Python/.git/objects
+424	./Pictures/Python/.git
+132	./Pictures/Python/Sample
+20	./Pictures/Python/CO5
+12	./Pictures/Python/CO3/graphics/graphics3D/__pycache__
+24	./Pictures/Python/CO3/graphics/graphics3D
+16	./Pictures/Python/CO3/graphics/__pycache__
+52	./Pictures/Python/CO3/graphics
+60	./Pictures/Python/CO3
+8	./Pictures/Python/Co2/__pycache__
+60	./Pictures/Python/Co2
+88	./Pictures/Python/Co1
+24	./Pictures/Python/CO4
+16	./Pictures/Python/__pycache__
+1068	./Pictures/Python
+1276	./Pictures
+1284	.
+robin@robin-VirtualBox:~/Documents$ head --help
+Usage: head [OPTION]... [FILE]...
+Print the first 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[-]NUM       print the first NUM bytes of each file;
+                             with the leading '-', print all but the last
+                             NUM bytes of each file
+  -n, --lines=[-]NUM       print the first NUM lines instead of the first 10;
+                             with the leading '-', print all but the last
+                             NUM lines of each file
+  -q, --quiet, --silent    never print headers giving file names
+  -v, --verbose            always print headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/head>
+or available locally via: info '(coreutils) head invocation'
+robin@robin-VirtualBox:~/Documents$ tail+36 test.txt|head -1
+tail+36: command not found
+robin@robin-VirtualBox:~/Documents$ tail +36 test.txt|head -1
+edfdfd
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt|head -1
+replaced2
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt
+replaced2
+34
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail -17 test.txt
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt
+replaced2
+34
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail -17 test.txt|head -1
+replaced
+robin@robin-VirtualBox:~/Documents$ tail -17 test.txt|head -1
+replaced
+robin@robin-VirtualBox:~/Documents$ tail -17 test.txt|head -1
+replaced
+robin@robin-VirtualBox:~/Documents$ tail -17 test.txt|head -19
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt|head -19
+17
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+edfdfd
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt|head -1
+17
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt|head -2
+17
+43replaced
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt|head +2
+head: cannot open '+2' for reading: No such file or directory
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt|head +1
+head: cannot open '+1' for reading: No such file or directory
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt|head -1
+17
+robin@robin-VirtualBox:~/Documents$ head +17 test.txt|tail -1
+head: cannot open '+17' for reading: No such file or directory
+9
+robin@robin-VirtualBox:~/Documents$ head -17 test.txt|tail -1
+17
+robin@robin-VirtualBox:~/Documents$ head -17 test.txt|tail +1
+2321312312
+REPLACED
+HaRI J
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replaced1
+replaced2
+replaced3
+replaced4
+16
+17
+robin@robin-VirtualBox:~/Documents$ head -17 test.txt|tail -1
+17
+robin@robin-VirtualBox:~/Documents$ head +17 test.txt|tail -1
+head: cannot open '+17' for reading: No such file or directory
+9
+robin@robin-VirtualBox:~/Documents$ head -17 test.txt|
+> head -17 test.txt|^C
+robin@robin-VirtualBox:~/Documents$ head -17 test.txt
+2321312312
+REPLACED
+HaRI J
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replaced1
+replaced2
+replaced3
+replaced4
+16
+17
+robin@robin-VirtualBox:~/Documents$ head 17 test.txt
+head: cannot open '17' for reading: No such file or directory
+==> test.txt <==
+2321312312
+REPLACED
+HaRI J
+3
+4
+5
+6
+7
+8
+9
+robin@robin-VirtualBox:~/Documents$ head +17 test.txt
+head: cannot open '+17' for reading: No such file or directory
+==> test.txt <==
+2321312312
+REPLACED
+HaRI J
+3
+4
+5
+6
+7
+8
+9
+robin@robin-VirtualBox:~/Documents$ tail +17 test.txt
+17
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail +2 test.txt|head -1
+REPLACED
+robin@robin-VirtualBox:~/Documents$ tail +2 test.txt|head -1
+2
+robin@robin-VirtualBox:~/Documents$ tail +35 test.txt|head -1
+edfdfd
+robin@robin-VirtualBox:~/Documents$ tail +35 test.txt
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail +34 test.txt
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail +34 test.txt|head -3
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail +34 test.txt|head -2
+23
+edfdfd
+robin@robin-VirtualBox:~/Documents$ tail +34 test.txt|head -5
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ tail +24 test.txt|head -5 
+replaced2
+replaced211
+replaced
+32
+323
+robin@robin-VirtualBox:~/Documents$ tail +24 test.txt|head +5 
+head: cannot open '+5' for reading: No such file or directory
+robin@robin-VirtualBox:~/Documents$ tail +24 test.txt|head -1
+replaced2
+robin@robin-VirtualBox:~/Documents$ sed -i 's/1/replaced/' test.txt
+robin@robin-VirtualBox:~/Documents$ sed -i 's/3/1000/g' test.txt
+robin@robin-VirtualBox:~/Documents$ sed -e 's/1000/3/g' test.txt
+232replaced312312
+2
+3
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replacedreplaced
+replaced2
+replaced3
+replaced4
+replaced6
+replaced7
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced2replaced1
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ sed -n 's/1000/3/g' test.txt
+robin@robin-VirtualBox:~/Documents$ sed -i 's/1000/3/g' test.txt
+robin@robin-VirtualBox:~/Documents$ sed -i -e 's/3/1000/g' test.txt
+robin@robin-VirtualBox:~/Documents$ sed -i -n '4/3/1000/g' test.txt
+sed: -e expression #1, char 2: unknown command: `/'
+robin@robin-VirtualBox:~/Documents$ sed -e '1000/8000/g' test.txt
+sed: -e expression #1, char 5: unknown command: `/'
+robin@robin-VirtualBox:~/Documents$ sed '1000/8000/g' test.txt
+sed: -e expression #1, char 5: unknown command: `/'
+robin@robin-VirtualBox:~/Documents$ sed '/1000/8000/g' test.txt
+sed: -e expression #1, char 7: unknown command: `8'
+robin@robin-VirtualBox:~/Documents$ sed 's/1000/8000/g' test.txt
+280002replaced800012800012
+2
+8000
+8000
+4
+5
+6
+7
+8
+9
+replaced0
+replacedreplaced
+replaced2
+replaced8000
+replaced4
+replaced6
+replaced7
+48000replaced
+replaced
+replaced
+28000
+48000
+280002
+replaced2
+replaced2replaced1
+replaced
+80002
+800028000
+28000
+28000replaced
+2replaced2
+80002
+8000
+28000
+edfdfd
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ sed --help
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+      --debug
+                 annotate program execution
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -E, -r, --regexp-extended
+                 use extended regular expressions in the script
+                 (for portability use POSIX -E).
+  -s, --separate
+                 consider files as separate rather than as a single,
+                 continuous long stream.
+      --sandbox
+                 operate in sandbox mode (disable e/r/w commands).
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then the first
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input files are
+specified, then the standard input is read.
+
+GNU sed home page: <https://www.gnu.org/software/sed/>.
+General help using GNU software: <https://www.gnu.org/gethelp/>.
+E-mail bug reports to: <bug-sed@gnu.org>.
+robin@robin-VirtualBox:~/Documents$ sed -n test.txt
+sed: can't find label for jump to `est.txt'
+robin@robin-VirtualBox:~/Documents$ sed -n '4~3p' test.txt
+1000
+6
+8
+replacedreplaced
+replaced4
+
+replaced
+210002
+replaced2replaced1
+100021000
+21000replaced
+1000
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ sed -i '4~3p' test.txt
+robin@robin-VirtualBox:~/Documents$ sed -n '4~3p' test.txt
+1000
+5
+
+8
+replacedreplaced
+replaced1000
+replaced6
+
+replaced
+41000
+
+replaced2replaced1
+100021000
+21000
+2replaced2
+1000
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ sed -n '4~3p' test.txt
+1000
+5
+
+8
+replacedreplaced
+replaced1000
+replaced6
+
+replaced
+41000
+
+replaced2replaced1
+100021000
+21000
+2replaced2
+1000
+jhdjfhdj
+robin@robin-VirtualBox:~/Documents$ sed -n -i '4~3p' test.txt
+robin@robin-VirtualBox:~/Documents$ ^C
+robin@robin-VirtualBox:~/Documents$ sed -i 's/10~10p/ppppppppp/' test.txt
+robin@robin-VirtualBox:~/Documents$ sed -i 's/2~2p/ppppppppp/' test.txt
+robin@robin-VirtualBox:~/Documents$ ls *.txt
+new.txt  test.txt
+robin@robin-VirtualBox:~/Documents$ ls *.txt^C
+robin@robin-VirtualBox:~/Documents$ chmod
+chmod: missing operand
+Try 'chmod --help' for more information.
+robin@robin-VirtualBox:~/Documents$ chmod +x test.txt
+robin@robin-VirtualBox:~/Documents$ chmod +r test.txt
+robin@robin-VirtualBox:~/Documents$ cdmod --help
+Command 'cdmod' not found, did you mean:
+  command 'chmod' from deb coreutils (8.32-3ubuntu1)
+Try: sudo apt install <deb name>
+robin@robin-VirtualBox:~/Documents$ chmod --help
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+  -c, --changes          like verbose but report only when a change is made
+  -f, --silent, --quiet  suppress most error messages
+  -v, --verbose          output a diagnostic for every file processed
+      --no-preserve-root  do not treat '/' specially (the default)
+      --preserve-root    fail to operate recursively on '/'
+      --reference=RFILE  use RFILE's mode instead of MODE values
+  -R, --recursive        change files and directories recursively
+      --help     display this help and exit
+      --version  output version information and exit
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/chmod>
+or available locally via: info '(coreutils) chmod invocation'
+robin@robin-VirtualBox:~/Documents$ man chmod
+robin@robin-VirtualBox:~/Documents$ chmod +rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod -rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod +rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod +x test.txt
+robin@robin-VirtualBox:~/Documents$ chmod -rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod +rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod -rwx other test.txt
+chmod: cannot access 'other': No such file or directory
+robin@robin-VirtualBox:~/Documents$ chmod other +rwx test.txt
+chmod: invalid mode: ‘other’
+Try 'chmod --help' for more information.
+robin@robin-VirtualBox:~/Documents$ chmod -rwx other test.txt^C
+robin@robin-VirtualBox:~/Documents$ chmod o+x test.txt
+robin@robin-VirtualBox:~/Documents$ chmod +rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod o+x test.txt
+robin@robin-VirtualBox:~/Documents$ chmod o+rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod o-x test.txt
+robin@robin-VirtualBox:~/Documents$ chmod o-rwx test.txt
+robin@robin-VirtualBox:~/Documents$ ^C
+robin@robin-VirtualBox:~/Documents$ chmod og-rwx test.txt
+robin@robin-VirtualBox:~/Documents$ ^C
+robin@robin-VirtualBox:~/Documents$ chmod uog-rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod uog-rwx test.tx^C
+robin@robin-VirtualBox:~/Documents$ chmod a-rwx test.txt
+robin@robin-VirtualBox:~/Documents$ chmod a+rwx test.txt
+robin@robin-VirtualBox:~/Documents$ bash password.sh
+bash: password.sh: No such file or directory
+robin@robin-VirtualBox:~/Documents$ cd ..
+robin@robin-VirtualBox:~$ bash password.sh
+bash: password.sh: No such file or directory
+robin@robin-VirtualBox:~$ cd Desktop
+robin@robin-VirtualBox:~/Desktop$ bash password.sh
+enter the password
+343434
+password lenght should be greater than or equal 8 hence weak password
+robin@robin-VirtualBox:~/Desktop$ cat test.txt | tr A-Z a-z
+cat: test.txt: No such file or directory
+robin@robin-VirtualBox:~/Desktop$ cd ..
+robin@robin-VirtualBox:~$ cd Pictures
+robin@robin-VirtualBox:~/Pictures$ cat test.txt | tr A-Z a-z
+replaced
+replaced
+hari j
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replaced1
+replaced2
+replaced3
+replaced4
+replaced5
+replaced2
+34
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ cat test.txt | tr a-z A-Z
+REPLACED
+REPLACED
+HARI J
+3
+4
+5
+6
+7
+8
+9
+REPLACED0
+REPLACED1
+REPLACED2
+REPLACED3
+REPLACED4
+REPLACED5
+REPLACED2
+34
+43REPLACED
+REPLACED
+REPLACED
+23
+43
+232
+REPLACED2
+REPLACED211
+REPLACED
+32
+323
+23
+23REPLACED
+2REPLACED2
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ cat >jomin.txt
+jomin folder^C
+robin@robin-VirtualBox:~/Pictures$ cat jomin.txt
+robin@robin-VirtualBox:~/Pictures$ cat jomin.txt test.txt
+replaced
+REPLACED
+HaRI J
+3
+4
+5
+6
+7
+8
+9
+replaced0
+replaced1
+replaced2
+replaced3
+replaced4
+replaced5
+replaced2
+34
+43replaced
+replaced
+replaced
+23
+43
+232
+replaced2
+replaced211
+replaced
+32
+323
+23
+23replaced
+2replaced2
+32
+3
+23
+
+robin@robin-VirtualBox:~/Pictures$ cat jomin.txt^C
+robin@robin-VirtualBox:~/Pictures$ ^C
+robin@robin-VirtualBox:~/Pictures$ ^C
+
