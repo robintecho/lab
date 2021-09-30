@@ -1,0 +1,33 @@
+---------upper and lower case cat command ------------
+
+cat test.txt | tr A-Z a-z>out111.txt
+cat test.txt | tr a-z A-Z>new.txt
+
+----------cp command to copy file another directory-------
+
+cp -i test.txt /home/robin/Music
+
+----------copy file without changing timestamp------------
+
+cp -p fibno.sh /home/robin/Music
+
+--------- copying directory to another directory------
+
+cp -r /home/robin/Pictures /home/robin/Documents
+
+----------print 24th line in a file---------------------------
+
+tail +24 test.txt|head -1
+
+----------sed command to save only specific line -----------
+
+
+sed -n -i '4~3p' test.txt
+
+ls *.txt
+
+ls *.txt
+
+----------- change permmision -------- u= owner , o=group , g=other
+
+chmod uog-rwx test.txt
