@@ -8,8 +8,6 @@ cat test.txt | tr a-z A-Z>new.txt		// uppercase
 cp -i test.txt /home/robin/Music		//command to copy file to another directory
 
 cp -p fibno.sh /home/robin/Music		//copy file without changing timestamp
-
-
 cp -r /home/robin/Pictures /home/robin/Documents	// directory to another directory
 
 ----------print 24th line in a file---------------------------
@@ -26,9 +24,21 @@ sed -i '0~2 i simple' test1.txt 		//add line to every 2nd line
 
 ------ list specific extension   ---------
 ls *.txt
+ls | wc -l					//number of files and directory 
 ----------- change permmision -------- u= owner , o=group , g=other
+chmod uog-rwx test.txt				//remove all access for all users
 
-chmod uog-rwx test.txt			//remove all access for all users
+************************************* Find *******************************************
+find testr -type f | wc -l			//count all files in a specified directory
+sudo find . -type f -print | wc -l		//count all the files in a directory
+
+************************ grep *************************
+grep -i "jomin" test.txt 			//display specific string in a file without case 
+grep -c "jomin" test.txt			//count 
+
+
+
+ 	
 
 
  	
