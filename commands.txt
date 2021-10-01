@@ -19,7 +19,7 @@ tail +24 test.txt|head -1
 sed -n -i '4~3p' test.txt			//save only specific line
 sed 's/1/replaced/' test.txt			// print 'replace 1 with replaced'
 sed -i '/^$/d' test1.txt                	//  delete blank lines from a file             
-sed -i '/^$/d' test1.txt                	// add a string to a line
+se               	// add a string to a line
 sed -i '0~2 i simple' test1.txt 		//add line to every 2nd line
 
 ------ list specific extension   ---------
