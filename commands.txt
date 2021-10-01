@@ -1,33 +1,34 @@
----------upper and lower case cat command ------------
+---------cat command ------------
 
-cat test.txt | tr A-Z a-z>out111.txt
-cat test.txt | tr a-z A-Z>new.txt
+cat test.txt | tr A-Z a-z>out111.txt		// lower case
+cat test.txt | tr a-z A-Z>new.txt		// uppercase
 
-----------cp command to copy file another directory-------
+----------********* cp ********-------
 
-cp -i test.txt /home/robin/Music
+cp -i test.txt /home/robin/Music		//command to copy file to another directory
 
-----------copy file without changing timestamp------------
+cp -p fibno.sh /home/robin/Music		//copy file without changing timestamp
 
-cp -p fibno.sh /home/robin/Music
 
---------- copying directory to another directory------
-
-cp -r /home/robin/Pictures /home/robin/Documents
+cp -r /home/robin/Pictures /home/robin/Documents	// directory to another directory
 
 ----------print 24th line in a file---------------------------
 
 tail +24 test.txt|head -1
 
-----------sed command to save only specific line -----------
+----------sed command  -----------
 
+sed -n -i '4~3p' test.txt			//save only specific line
+sed 's/1/replaced/' test.txt			// print 'replace 1 with replaced'
+sed -i '/^$/d' test1.txt                	//  delete blank lines from a file             
+sed -i '/^$/d' test1.txt                	// add a string to a line
+sed -i '0~2 i simple' test1.txt 		//add line to every 2nd line
 
-sed -n -i '4~3p' test.txt
-
+------ list specific extension   ---------
 ls *.txt
-
-ls *.txt
-
 ----------- change permmision -------- u= owner , o=group , g=other
 
-chmod uog-rwx test.txt
+chmod uog-rwx test.txt			//remove all access for all users
+
+
+ 	
