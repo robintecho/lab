@@ -1,0 +1,62 @@
+-------------------------------------------------------
+10. How to print all array indexes?
+
+arr=(10 20 30 40 50)
+echo "index : value"
+for((i=0;i<${#arr[@]};i++))
+do
+echo "$i : ${arr[$i]}"
+done
+
+-----------------------------------------
+
+11 . Write a shell script to display the last updated file or the newest file in a directory?
+
+ls -lrt | grep ^- | awk 'END{print $NF}'
+
+-------------------------------------------------
+
+12. Write a shell script that adds an extension “.new” to all the files in directory.
+
+dir=$1
+for file in '$1/*'
+do
+mv $file $file.new
+done
+
+================================================================
+
+15. Write a shell script to find out the unique words in a file and also count the occurrence of each of these words.
+We can say that the file under consideration contains many lines, and each line has multiple words
+
+sed -e '/ /\n\g' animals | grep -v '^$' | uniq -c | sort -n
+
+==================================================================
+9. Write a shell script to check to see if the file “file_path” exists. If it does exist, display “file_path passwords
+are enabled.” Next, check to see if you can write to the file. If you can, display “You have permissions to edit
+“file_path.””If you cannot, display “You do NOT have permissions to edit“file_path””?
+Ans :
+FILE="/home/user/shellscriptingpgms/pgm1"
+if [ -e "$FILE" ]
+then
+echo "$FILEpasswords are enabled"
+fi
+if [ -x "$FILE" ]
+then
+echo "You have permission to execute $FILE"
+else
+echo "Y
+
+======================================================================
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------
+
+
